@@ -72,14 +72,16 @@
 }
 
 /* Logo kiri atas */
-.logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 55px;
-    background: white;
-    padding: 6px;
-    border-radius: 50%;
+   .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
         .hero h1 {
@@ -166,7 +168,9 @@
 <nav>
     <div class="nav-brand">
         <img src="logo.png" class="nav-logo">
-    <h2>SMPN 17 SATU ATAP BITUNG/h2>
+        <h2>SMPN 17 SATU ATAP BITUNG</h2>
+    </div>
+
     <ul>
         <li><a href="#">Beranda</a></li>
         <li><a href="#">Profil</a></li>
@@ -174,18 +178,7 @@
         <li><a href="#">Kontak</a></li>
     </ul>
 </nav>
-    .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-logo {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-
+ 
 <!-- Hero -->
 <div class="hero">
 
@@ -228,4 +221,5 @@
 
 </body>
 </html>
+
 
