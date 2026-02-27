@@ -164,7 +164,9 @@
 
 <!-- Navbar -->
 <nav>
-    <h2>SMPN 1 Nusantara</h2>
+    <div class="nav-brand">
+        <img src="logo.png" class="nav-logo">
+    <h2>SMPN 17 SATU ATAP BITUNG/h2>
     <ul>
         <li><a href="#">Beranda</a></li>
         <li><a href="#">Profil</a></li>
@@ -172,11 +174,20 @@
         <li><a href="#">Kontak</a></li>
     </ul>
 </nav>
+    .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
 
 <!-- Hero -->
 <div class="hero">
-
-    <img src="logo.png" class="logo">
 
     <div>
         <h1>Selamat Datang di SMPN 17 Satu Atap Bitung</h1>
@@ -217,3 +228,4 @@
 
 </body>
 </html>
+
