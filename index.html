@@ -15,10 +15,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Body */
 body {
     background: #f5f7fa;
     color: #333;
-    scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -46,69 +46,42 @@ nav {
     object-fit: contain;
 }
 
-.nav-menu {
+nav ul {
+    list-style: none;
     display: flex;
-    gap: 25px;
 }
 
-.nav-menu a {
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: 500;
     transition: 0.3s;
 }
 
-.nav-menu a:hover {
+nav ul li a:hover {
     color: #ffd700;
 }
 
-/* Hamburger */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background: white;
-    transition: 0.3s;
-}
-
-/* Hero Section with Parallax */
+/* Hero Section */
 .hero {
-    height: 100vh;
-    position: relative;
+    height: 90vh;
+    background: linear-gradient(rgba(30,58,138,0.7), rgba(30,58,138,0.7)),
+               url('gerak-jalan.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: url('gerak-jalan.jpg') center/cover no-repeat fixed;
-    z-index: -2;
-    transform: translateZ(0);
-}
-
-.hero::after {
-    content:'';
-    position:absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(30,58,138,0.6);
-    z-index:-1;
 }
 
 .hero-content {
     animation: fadeInUp 1.5s ease-in-out;
-    z-index: 2;
 }
 
 .hero-logo {
@@ -117,21 +90,10 @@ nav {
     margin-bottom: 20px;
 }
 
-/* Animations */
+/* Animation */
 @keyframes fadeInUp {
     0% { opacity: 0; transform: translateY(20px);}
     100% { opacity: 1; transform: translateY(0);}
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Sections */
@@ -196,6 +158,14 @@ section {
     font-weight: 700;
 }
 
+/* Footer */
+footer {
+    background: #1e3a8a;
+    color: white;
+    padding: 25px 10%;
+    text-align: center;
+}
+
 /* Signature */
 .signature {
     position: absolute;
@@ -228,35 +198,22 @@ section {
     background: #13306d;
 }
 
-/* Footer */
-footer {
-    background: #1e3a8a;
-    color: white;
-    padding: 25px 10%;
-    text-align: center;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding: 10px 5%;
     }
 
-    .nav-menu {
-        display: none;
+    nav ul {
         flex-direction: column;
-        width: 100%;
+        gap: 10px;
         margin-top: 10px;
     }
 
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
+    nav ul li {
+        margin-left: 0;
     }
 
     .hero-logo {
@@ -301,17 +258,12 @@ footer {
         <img src="logo.png" class="nav-logo" alt="Logo SMPN 17">
         <h2>SMPN 17 SATU ATAP BITUNG</h2>
     </div>
-    <div class="hamburger" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="nav-menu" id="nav-menu">
-        <a href="#beranda">Beranda</a>
-        <a href="#profil">Profil</a>
-        <a href="#program">Program</a>
-        <a href="#kontak">Kontak</a>
-    </div>
+    <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
 </nav>
 
 <!-- Hero -->
@@ -325,7 +277,7 @@ footer {
 </div>
 
 <!-- Profil -->
-<section id="profil" class="fade-in">
+<section id="profil">
     <h2 class="section-title">Profil Sekolah</h2>
     <p>SMP Negeri 17 Satu Atap Bitung berfokus pada pengembangan akademik, karakter, dan kreativitas siswa.</p>
 
@@ -342,7 +294,7 @@ footer {
 </section>
 
 <!-- Program -->
-<section id="program" class="fade-in">
+<section id="program">
     <h2 class="section-title">Program Unggulan</h2>
     <div class="cards">
         <div class="card">
@@ -361,40 +313,17 @@ footer {
 </section>
 
 <!-- Kontak -->
-<section id="kontak" class="fade-in">
+<section id="kontak">
     <h2 class="section-title">Kontak Sekolah</h2>
     <p>Alamat: Jl. Contoh No.1, Bitung</p>
     <p>Telepon/WA: 0812-3456-7890 | Email: info@smpn17bitung.sch.id</p>
+    <!-- Bisa tambah form kontak di sini jika mau -->
 </section>
 
 <!-- Footer -->
 <footer>
     <p>© 2026 SMP Negeri 17 Satu Atap Bitung | All Rights Reserved</p>
 </footer>
-
-<script>
-// Hamburger toggle
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Scroll animation
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.classList.add('visible');
-        appearOnScroll.unobserve(entry);
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-</script>
 
 </body>
 </html>
