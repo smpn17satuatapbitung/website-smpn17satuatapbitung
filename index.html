@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+/* Reset & Font */
 * {
     margin: 0;
     padding: 0;
@@ -15,10 +16,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Body & Signature */
 body {
     background: #f5f7fa;
     color: #333;
 }
+
 .signature {
     position: absolute;
     bottom: 20px;
@@ -29,6 +32,7 @@ body {
     color: gray;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
+
 /* Navbar */
 nav {
     display: flex;
@@ -77,14 +81,14 @@ nav ul li a:hover {
 .hero {
     height: 90vh;
     background: linear-gradient(rgba(30,58,138,0.8), rgba(30,58,138,0.8)),
-               url('gerak-jalan.jpg') center/cover;
+               url('gerak-jalan.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     padding: 20px;
-    position: relative; /* TAMBAHKAN INI */
+    position: relative;
 }
 
 .hero-content {
@@ -148,9 +152,11 @@ section {
 .card:hover {
     transform: translateY(-10px);
 }
+
 .highlight {
     color: #ffd700; 
 }
+
 /* Footer */
 footer {
     background: #1e3a8a;
@@ -159,10 +165,59 @@ footer {
     text-align: center;
 }
 
-/* Responsive */
-@media(max-width: 768px) {
+/* Responsive Media Query */
+@media (max-width: 768px) {
+    /* Navbar */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 5%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+    }
+
+    /* Hero */
+    .hero-logo {
+        width: 80px;
+        opacity: 0.5;
+        transform: translateY(-10px);
+    }
+
     .hero h1 {
-        font-size: 32px;
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-content {
+        padding: 10px;
+    }
+
+    /* Cards */
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 14px;
     }
 }
 </style>
@@ -172,7 +227,7 @@ footer {
 <!-- Navbar -->
 <nav>
     <div class="nav-brand">
-        <img src="logo.png" class="nav-logo">
+        <img src="logo.png" class="nav-logo" alt="Logo SMPN 17">
         <h2>SMPN 17 SATU ATAP BITUNG</h2>
     </div>
 
@@ -183,24 +238,17 @@ footer {
         <li><a href="#">Kontak</a></li>
     </ul>
 </nav>
- 
+
 <!-- Hero -->
 <div class="hero">
     <div class="hero-content">
-        <img src="logo.png" class="hero-logo">
-
-        <h1>
-            Selamat Datang di <br>
-           <span class="highlight">SMPN 17 SATU ATAP BITUNG</span>
-        </h1>
+        <img src="logo.png" class="hero-logo" alt="Logo SMPN 17">
+        <h1>Selamat Datang di <br><span class="highlight">SMPN 17 SATU ATAP BITUNG</span></h1>
         <p>Membentuk Generasi Cerdas, Berkarakter, dan Berprestasi</p>
     </div>
-    
-    <!-- Nama di kanan bawah -->
     <div class="signature">Dego</div>
-
 </div>
-  
+
 <!-- Profil -->
 <section>
     <h2 class="section-title">Profil Sekolah</h2>
@@ -233,20 +281,3 @@ footer {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
