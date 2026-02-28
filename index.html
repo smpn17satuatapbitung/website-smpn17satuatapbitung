@@ -71,13 +71,44 @@ nav ul li a:hover {
     height: 90vh;
     background: linear-gradient(rgba(30,58,138,0.7), rgba(30,58,138,0.7)),
                url('gerak-jalan.jpg') center/cover no-repeat;
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(30,58,138,0.7), rgba(30,58,138,0.7)),
+               url('gerak-jalan.jpg') center/cover no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;      /* teks berada di atas */
+    justify-content: center;      /* tetap horizontal di tengah */
     text-align: center;
     color: white;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;            /* jarak dari atas, bisa diubah */
+}
+
+.hero-content {
+    animation: fadeInUp 1.5s ease-in-out;
+    max-width: 90%;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 50px;        /* jarak lebih kecil di layar kecil */
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
 }
 .hero-content {
     animation: fadeInUp 1.5s ease-in-out;
@@ -307,7 +338,7 @@ footer {
 <!-- Kontak -->
 <section id="kontak">
     <h2 class="section-title">Kontak Sekolah</h2>
-    <p>Alamat: Jl. Contoh No.1, Bitung</p>
+    <p>Alamat: Jl. Trans Bitung-Likupang</p>
     <p>Telepon/WA: 0812-3456-7890 | Email: info@smpn17bitung.sch.id</p>
     <!-- Bisa tambah form kontak di sini jika mau -->
 </section>
@@ -319,4 +350,5 @@ footer {
 
 </body>
 </html>
+
 
