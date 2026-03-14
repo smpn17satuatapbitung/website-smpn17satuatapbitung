@@ -342,33 +342,6 @@ width:90%;
 
 </section>
 
-<script>
-
-let data=JSON.parse(localStorage.getItem("kegiatan")) || [];
-
-let html="";
-
-data.forEach(d=>{
-
-html+=`
-
-<div class="card">
-
-<h3>${d.judul}</h3>
-
-<p>${d.isi}</p>
-
-${d.foto ? `<img src="${d.foto}" style="width:100%">` : ""}
-
-</div>
-
-`;
-
-});
-
-document.getElementById("beritaList").innerHTML=html;
-
-</script>
 <!-- Kontak -->
 
 <section id="kontak">
@@ -387,6 +360,8 @@ document.getElementById("beritaList").innerHTML=html;
 </footer>
 
 <script>
+
+/* Ambil berita dari dashboard admin */
 
 let data = JSON.parse(localStorage.getItem("kegiatan")) || [];
 
