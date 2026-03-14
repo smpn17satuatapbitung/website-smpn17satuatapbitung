@@ -7,12 +7,16 @@
 
 body{
 font-family:Poppins;
-background:#f4f6fa;
+background:#f5f7fa;
 padding:40px;
 }
 
-h1{
-color:#1e3a8a;
+.container{
+max-width:700px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:10px;
 }
 
 input,textarea{
@@ -22,49 +26,47 @@ margin:10px 0;
 }
 
 button{
+padding:10px 20px;
 background:#1e3a8a;
 color:white;
 border:none;
-padding:10px 20px;
 cursor:pointer;
-margin-top:10px;
 }
 
 .card{
-background:white;
-padding:20px;
-margin:10px 0;
-border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
+background:#f2f2f2;
+padding:15px;
+margin-top:15px;
+border-radius:8px;
 }
 
 img{
-max-width:200px;
-display:block;
+width:100%;
 margin-top:10px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<h1>Dashboard Admin</h1>
+<div class="container">
 
 <h2>Tambah Berita / Kegiatan</h2>
 
-<input id="judul" placeholder="Judul Kegiatan">
+<input id="judul" placeholder="Judul kegiatan">
 
-<textarea id="isi" placeholder="Deskripsi kegiatan"></textarea>
+<textarea id="isi" placeholder="Isi berita"></textarea>
 
 <input type="file" id="foto">
 
-<button onclick="tambah()">Simpan</button>
+<button onclick="simpan()">Simpan</button>
 
-<h2>Data Berita</h2>
+<h2>Daftar Berita</h2>
 
 <div id="list"></div>
+
+</div>
 
 <script>
 
@@ -77,16 +79,21 @@ let html="";
 data.forEach((d,i)=>{
 
 html+=`
+
 <div class="card">
 
 <h3>${d.judul}</h3>
+
 <p>${d.isi}</p>
 
 ${d.foto ? `<img src="${d.foto}">` : ""}
 
+<br><br>
+
 <button onclick="hapus(${i})">Hapus</button>
 
 </div>
+
 `;
 
 });
@@ -95,23 +102,36 @@ document.getElementById("list").innerHTML=html;
 
 }
 
-function tambah(){
+function simpan(){
 
 let judul=document.getElementById("judul").value;
+
 let isi=document.getElementById("isi").value;
 
 let file=document.getElementById("foto").files[0];
+
+if(!judul || !isi){
+
+alert("Isi judul dan berita");
+
+return;
+
+}
 
 if(file){
 
 let reader=new FileReader();
 
-reader.onload=function(e){
+reader.onload=function(){
 
 data.push({
+
 judul:judul,
+
 isi:isi,
-foto:e.target.result
+
+foto:reader.result
+
 });
 
 localStorage.setItem("kegiatan",JSON.stringify(data));
@@ -122,10 +142,9 @@ tampil();
 
 reader.readAsDataURL(file);
 
-}
-else{
+}else{
 
-data.push({judul,isi});
+data.push({judul:judul,isi:isi});
 
 localStorage.setItem("kegiatan",JSON.stringify(data));
 
