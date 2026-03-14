@@ -6,8 +6,8 @@
 <style>
 
 body{
-font-family:Poppins;
-background:#1e3a8a;
+font-family:Arial;
+background:#f2f2f2;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -18,6 +18,7 @@ height:100vh;
 background:white;
 padding:40px;
 border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
 width:300px;
 text-align:center;
 }
@@ -29,30 +30,27 @@ margin:10px 0;
 }
 
 button{
+padding:10px;
+width:100%;
 background:#1e3a8a;
 color:white;
 border:none;
-padding:10px;
-width:100%;
 cursor:pointer;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="login-box">
 
-<h2>Admin Login</h2>
+<h2>Login Admin</h2>
 
-<input id="user" placeholder="Username">
-<input id="pass" type="password" placeholder="Password">
+<input type="text" id="user" placeholder="Username">
+<input type="password" id="pass" placeholder="Password">
 
 <button onclick="login()">Login</button>
-
-<p id="error"></p>
 
 </div>
 
@@ -63,11 +61,14 @@ function login(){
 let u=document.getElementById("user").value;
 let p=document.getElementById("pass").value;
 
-if(u==="admin" && p==="smpn17"){
+if(u=="admin" && p=="smpn17"){
+
 window.location="dashboard.html";
-}
-else{
-document.getElementById("error").innerText="Login gagal";
+
+}else{
+
+alert("Username atau password salah");
+
 }
 
 }
