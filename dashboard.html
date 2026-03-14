@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard Admin</title>
+
+<style>
+
+body{
+font-family:Poppins;
+background:#f4f6fa;
+padding:40px;
+}
+
+h1{
+color:#1e3a8a;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+background:#1e3a8a;
+color:white;
+border:none;
+padding:10px 20px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:10px 0;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+img{
+max-width:200px;
+display:block;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Dashboard Admin</h1>
+
+<h2>Tambah Berita / Kegiatan</h2>
+
+<input id="judul" placeholder="Judul Kegiatan">
+
+<textarea id="isi" placeholder="Deskripsi kegiatan"></textarea>
+
+<input type="file" id="foto">
+
+<button onclick="tambah()">Simpan</button>
+
+<h2>Data Berita</h2>
+
+<div id="list"></div>
+
+<script>
+
+let data=JSON.parse(localStorage.getItem("kegiatan")) || [];
+
+function tampil(){
+
+let html="";
+
+data.forEach((d,i)=>{
+
+html+=`
+<div class="card">
+
+<h3>${d.judul}</h3>
+<p>${d.isi}</p>
+
+${d.foto ? `<img src="${d.foto}">` : ""}
+
+<button onclick="hapus(${i})">Hapus</button>
+
+</div>
+`;
+
+});
+
+document.getElementById("list").innerHTML=html;
+
+}
+
+function tambah(){
+
+let judul=document.getElementById("judul").value;
+let isi=document.getElementById("isi").value;
+
+let file=document.getElementById("foto").files[0];
+
+if(file){
+
+let reader=new FileReader();
+
+reader.onload=function(e){
+
+data.push({
+judul:judul,
+isi:isi,
+foto:e.target.result
+});
+
+localStorage.setItem("kegiatan",JSON.stringify(data));
+
+tampil();
+
+};
+
+reader.readAsDataURL(file);
+
+}
+else{
+
+data.push({judul,isi});
+
+localStorage.setItem("kegiatan",JSON.stringify(data));
+
+tampil();
+
+}
+
+}
+
+function hapus(i){
+
+data.splice(i,1);
+
+localStorage.setItem("kegiatan",JSON.stringify(data));
+
+tampil();
+
+}
+
+tampil();
+
+</script>
+
+</body>
+</html>
