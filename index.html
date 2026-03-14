@@ -9,26 +9,22 @@
 
 <style>
 
-/* Smooth Scroll */
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
-/* Reset */
-* {
+*{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-/* Body */
 body{
 background:#f5f7fa;
 color:#333;
 }
 
 /* Navbar */
+
 nav{
 display:flex;
 justify-content:space-between;
@@ -49,8 +45,6 @@ gap:10px;
 
 .nav-logo{
 width:50px;
-height:50px;
-object-fit:contain;
 }
 
 nav ul{
@@ -74,6 +68,7 @@ color:#ffd700;
 }
 
 /* Hero */
+
 .hero{
 height:90vh;
 background:linear-gradient(rgba(30,58,138,0.7),rgba(30,58,138,0.7)),
@@ -83,19 +78,18 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
-position:relative;
 }
 
-.hero-content{
-animation:fadeInUp 1.5s ease-in-out;
+.hero h1{
+font-size:40px;
 }
 
-@keyframes fadeInUp{
-0%{opacity:0;transform:translateY(20px);}
-100%{opacity:1;transform:translateY(0);}
+.highlight{
+color:#ffd700;
 }
 
-/* Sections */
+/* Section */
+
 section{
 padding:70px 10%;
 text-align:center;
@@ -113,11 +107,11 @@ display:block;
 width:60px;
 height:4px;
 background:#ffd700;
-margin:10px auto 0;
-border-radius:2px;
+margin:10px auto;
 }
 
 /* Cards */
+
 .cards{
 display:flex;
 justify-content:center;
@@ -128,7 +122,7 @@ gap:30px;
 .card{
 background:white;
 width:280px;
-padding:25px 20px;
+padding:20px;
 border-radius:15px;
 box-shadow:0 10px 20px rgba(0,0,0,0.1);
 transition:0.3s;
@@ -136,20 +130,15 @@ transition:0.3s;
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 15px 25px rgba(0,0,0,0.2);
 }
 
-.card h3{
-color:#1e3a8a;
-margin-bottom:15px;
-}
-
-.highlight{
-color:#ffd700;
-font-weight:700;
+.card img{
+width:100%;
+border-radius:10px;
 }
 
 /* Habits */
+
 .habits{
 display:flex;
 flex-wrap:wrap;
@@ -166,14 +155,16 @@ width:200px;
 }
 
 /* Footer */
+
 footer{
 background:#1e3a8a;
 color:white;
-padding:25px 10%;
+padding:25px;
 text-align:center;
 }
 
 /* Responsive */
+
 @media(max-width:768px){
 
 nav{
@@ -203,6 +194,7 @@ width:90%;
 <body>
 
 <!-- Navbar -->
+
 <nav>
 
 <div class="nav-brand">
@@ -223,17 +215,20 @@ width:90%;
 </nav>
 
 <!-- Hero -->
+
 <div id="beranda" class="hero">
 
-<div class="hero-content">
+<div>
 <h1>Selamat Datang di<br>
 <span class="highlight">SMPN 17 SATU ATAP BITUNG</span></h1>
+
 <p>Membentuk Generasi Cerdas, Berkarakter, dan Berprestasi</p>
 </div>
 
 </div>
 
 <!-- Profil -->
+
 <section id="profil">
 
 <h2 class="section-title">Profil Sekolah</h2>
@@ -247,7 +242,7 @@ width:90%;
 <div class="habit">1. Bangun Pagi</div>
 <div class="habit">2. Beribadah</div>
 <div class="habit">3. Berolahraga</div>
-<div class="habit">4. Makan Sehat dan Bergizi</div>
+<div class="habit">4. Makan Sehat</div>
 <div class="habit">5. Gemar Belajar</div>
 <div class="habit">6. Bermasyarakat</div>
 <div class="habit">7. Tidur Lebih Awal</div>
@@ -257,6 +252,7 @@ width:90%;
 </section>
 
 <!-- Visi Misi -->
+
 <section id="visi">
 
 <h2 class="section-title">Visi & Misi Sekolah</h2>
@@ -283,6 +279,7 @@ width:90%;
 </section>
 
 <!-- Program -->
+
 <section id="program">
 
 <h2 class="section-title">Program Unggulan</h2>
@@ -296,7 +293,7 @@ width:90%;
 
 <div class="card">
 <h3>Ekstrakurikuler</h3>
-<p>Pramuka, PMR, olahraga, seni, dan kegiatan kreatif.</p>
+<p>Pramuka, PMR, olahraga, seni dan kegiatan kreatif.</p>
 </div>
 
 <div class="card">
@@ -309,6 +306,7 @@ width:90%;
 </section>
 
 <!-- Galeri -->
+
 <section id="galeri">
 
 <h2 class="section-title">Galeri Kegiatan</h2>
@@ -316,17 +314,17 @@ width:90%;
 <div class="cards">
 
 <div class="card">
-<img src="foto1.jpg" style="width:100%;border-radius:10px;">
+<img src="foto1.jpg" alt="Pramuka">
 <p>Kegiatan Pramuka</p>
 </div>
 
 <div class="card">
-<img src="foto2.jpg" style="width:100%;border-radius:10px;">
+<img src="foto2.jpg" alt="PMR">
 <p>Kegiatan PMR</p>
 </div>
 
 <div class="card">
-<img src="foto3.jpg" style="width:100%;border-radius:10px;">
+<img src="foto3.jpg" alt="Sekolah">
 <p>Kegiatan Sekolah</p>
 </div>
 
@@ -335,32 +333,17 @@ width:90%;
 </section>
 
 <!-- Berita -->
+
 <section id="berita">
 
 <h2 class="section-title">Berita Sekolah</h2>
 
-<div class="cards">
-
-<div class="card">
-<h3>Kegiatan Pramuka</h3>
-<p>Kegiatan pramuka untuk melatih kedisiplinan dan kerja sama.</p>
-</div>
-
-<div class="card">
-<h3>Kegiatan PMR</h3>
-<p>Kegiatan PMR berfokus pada kemanusiaan, kesehatan, dan siaga bencana.</p>
-</div>
-
-<div class="card">
-<h3>Program Literasi</h3>
-<p>Program membaca untuk meningkatkan minat baca siswa.</p>
-</div>
-
-</div>
+<div class="cards" id="beritaList"></div>
 
 </section>
 
 <!-- Kontak -->
+
 <section id="kontak">
 
 <h2 class="section-title">Kontak Sekolah</h2>
@@ -370,12 +353,33 @@ width:90%;
 
 </section>
 
-<!-- Footer -->
 <footer>
 
 <p>© 2026 SMP Negeri 17 Satu Atap Bitung</p>
 
 </footer>
+
+<script>
+
+let data = JSON.parse(localStorage.getItem("kegiatan")) || [];
+
+let html = "";
+
+data.forEach(d => {
+
+html += `
+<div class="card">
+<h3>${d.judul}</h3>
+<p>${d.isi}</p>
+${d.foto ? `<img src="${d.foto}">` : ""}
+</div>
+`;
+
+});
+
+document.getElementById("beritaList").innerHTML = html;
+
+</script>
 
 </body>
 </html>
