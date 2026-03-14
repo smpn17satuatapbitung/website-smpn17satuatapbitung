@@ -4,322 +4,378 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SMP Negeri 17 Satu Atap Bitung</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* Smooth Scroll */
+html{
+scroll-behavior:smooth;
+}
+
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 /* Body */
-body {
-    background: #f5f7fa;
-    color: #333;
+body{
+background:#f5f7fa;
+color:#333;
 }
 
 /* Navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 10%;
-    background: #1e3a8a;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 10%;
+background:#1e3a8a;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.nav-brand{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-.nav-logo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+.nav-logo{
+width:50px;
+height:50px;
+object-fit:contain;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
+nav ul{
+list-style:none;
+display:flex;
 }
 
-nav ul li {
-    margin-left: 25px;
+nav ul li{
+margin-left:25px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: 0.3s;
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
 }
 
-nav ul li a:hover {
-    color: #ffd700;
+nav ul li a:hover{
+color:#ffd700;
 }
 
-/* Hero Section */
-.hero {
-    height: 90vh;
-    background: linear-gradient(rgba(30,58,138,0.7), rgba(30,58,138,0.7)),
-               url('gerak-jalan.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
+/* Hero */
+.hero{
+height:90vh;
+background:linear-gradient(rgba(30,58,138,0.7),rgba(30,58,138,0.7)),
+url('gerak-jalan.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+position:relative;
 }
 
-.hero-content {
-    animation: fadeInUp 1.5s ease-in-out;
+.hero-content{
+animation:fadeInUp 1.5s ease-in-out;
 }
 
-/* Animation */
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px);}
-    100% { opacity: 1; transform: translateY(0);}
+@keyframes fadeInUp{
+0%{opacity:0;transform:translateY(20px);}
+100%{opacity:1;transform:translateY(0);}
 }
 
 /* Sections */
-section {
-    padding: 70px 10%;
-    text-align: center;
+section{
+padding:70px 10%;
+text-align:center;
 }
 
-.section-title {
-    font-size: 32px;
-    color: #1e3a8a;
-    margin-bottom: 40px;
-    position: relative;
+.section-title{
+font-size:32px;
+color:#1e3a8a;
+margin-bottom:40px;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #ffd700;
-    margin: 10px auto 0;
-    border-radius: 2px;
+.section-title::after{
+content:'';
+display:block;
+width:60px;
+height:4px;
+background:#ffd700;
+margin:10px auto 0;
+border-radius:2px;
 }
 
 /* Cards */
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
 }
 
-.card {
-    background: white;
-    width: 280px;
-    padding: 25px 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: 0.3s;
-    cursor: pointer;
+.card{
+background:white;
+width:280px;
+padding:25px 20px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 25px rgba(0,0,0,0.2);
 }
 
-.card h3 {
-    color: #1e3a8a;
-    margin-bottom: 15px;
+.card h3{
+color:#1e3a8a;
+margin-bottom:15px;
 }
 
-.card p {
-    font-size: 16px;
-    line-height: 1.5;
+.highlight{
+color:#ffd700;
+font-weight:700;
 }
 
-/* Highlight */
-.highlight {
-    color: #ffd700;
-    font-weight: 700;
+/* Habits */
+.habits{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.habit{
+background:#1e3a8a;
+color:white;
+padding:15px;
+border-radius:12px;
+width:200px;
 }
 
 /* Footer */
-footer {
-    background: #1e3a8a;
-    color: white;
-    padding: 25px 10%;
-    text-align: center;
-}
-
-/* Signature */
-.signature {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-family: 'Playball', cursive;
-    font-size: 16px;
-    opacity: 0.8;
-}
-
-/* 7 Kebiasaan Baik */
-.habits {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.habit {
-    background: #1e3a8a;
-    color: white;
-    padding: 15px;
-    border-radius: 12px;
-    width: 200px;
-    transition: 0.3s;
-}
-
-.habit:hover {
-    transform: translateY(-5px);
-    background: #13306d;
+footer{
+background:#1e3a8a;
+color:white;
+padding:25px 10%;
+text-align:center;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 5%;
-    }
+@media(max-width:768px){
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    nav ul li {
-        margin-left: 0;
-    }
-
-    .hero-logo {
-        width: 80px;
-        opacity: 0.5;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .card {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .habits {
-        flex-direction: column;
-    }
-
-    footer p {
-        font-size: 14px;
-    }
+nav{
+flex-direction:column;
 }
+
+nav ul{
+flex-direction:column;
+gap:10px;
+margin-top:10px;
+}
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+.card{
+width:90%;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
 <!-- Navbar -->
 <nav>
-    <div class="nav-brand">
-        <img src="logo.png" class="nav-logo" alt="Logo SMPN 17">
-        <h2>SMPN 17 SATU ATAP BITUNG</h2>
-    </div>
-    <ul>
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#profil">Profil</a></li>
-        <li><a href="#program">Program</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-    </ul>
+
+<div class="nav-brand">
+<img src="logo.png" class="nav-logo">
+<h2>SMPN 17 SATU ATAP BITUNG</h2>
+</div>
+
+<ul>
+<li><a href="#beranda">Beranda</a></li>
+<li><a href="#profil">Profil</a></li>
+<li><a href="#visi">Visi Misi</a></li>
+<li><a href="#program">Program</a></li>
+<li><a href="#galeri">Galeri</a></li>
+<li><a href="#berita">Berita</a></li>
+<li><a href="#kontak">Kontak</a></li>
+</ul>
+
 </nav>
 
 <!-- Hero -->
 <div id="beranda" class="hero">
-    <div class="hero-content">
-        
-        <h1>Selamat Datang di <br><span class="highlight">SMPN 17 SATU ATAP BITUNG</span></h1>
-        <p>Membentuk Generasi Cerdas, Berkarakter, dan Berprestasi</p>
-    </div>
-    <div class="signature">Dego</div>
+
+<div class="hero-content">
+<h1>Selamat Datang di<br>
+<span class="highlight">SMPN 17 SATU ATAP BITUNG</span></h1>
+<p>Membentuk Generasi Cerdas, Berkarakter, dan Berprestasi</p>
+</div>
+
 </div>
 
 <!-- Profil -->
 <section id="profil">
-    <h2 class="section-title">Profil Sekolah</h2>
-    <p>SMP Negeri 17 Satu Atap Bitung berfokus pada pengembangan akademik, karakter, dan kreativitas siswa.</p>
 
-    <h3 class="section-title">7 Kebiasaan Baik Anak Indonesia</h3>
-    <div class="habits">
-        <div class="habit">1. Bangun Pagi</div>
-        <div class="habit">2. Beribadah</div>
-        <div class="habit">3. Berolahraga</div>
-        <div class="habit">4. Makan Sehat dan Bergizi</div>
-        <div class="habit">5. Gemar Belajar</div>
-        <div class="habit">6. Bermasyarakat</div>
-        <div class="habit">7. Tidur Lebih Awal</div>
-    </div>
+<h2 class="section-title">Profil Sekolah</h2>
+
+<p>SMP Negeri 17 Satu Atap Bitung berfokus pada pengembangan akademik, karakter, dan kreativitas siswa.</p>
+
+<h3 class="section-title">7 Kebiasaan Baik Anak Indonesia</h3>
+
+<div class="habits">
+
+<div class="habit">1. Bangun Pagi</div>
+<div class="habit">2. Beribadah</div>
+<div class="habit">3. Berolahraga</div>
+<div class="habit">4. Makan Sehat dan Bergizi</div>
+<div class="habit">5. Gemar Belajar</div>
+<div class="habit">6. Bermasyarakat</div>
+<div class="habit">7. Tidur Lebih Awal</div>
+
+</div>
+
+</section>
+
+<!-- Visi Misi -->
+<section id="visi">
+
+<h2 class="section-title">Visi & Misi Sekolah</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Visi</h3>
+<p>Terwujudnya peserta didik yang cerdas, berkarakter, berprestasi, dan berwawasan lingkungan.</p>
+</div>
+
+<div class="card">
+<h3>Misi</h3>
+<p>
+1. Menyelenggarakan pendidikan berkualitas<br>
+2. Membentuk karakter disiplin<br>
+3. Mengembangkan potensi siswa<br>
+4. Menumbuhkan budaya belajar
+</p>
+</div>
+
+</div>
+
 </section>
 
 <!-- Program -->
 <section id="program">
-    <h2 class="section-title">Program Unggulan</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Program Akademik</h3>
-            <p>Kurikulum terbaru, bimbingan belajar, dan teknologi pendidikan untuk mendukung prestasi siswa.</p>
-        </div>
-        <div class="card">
-            <h3>Ekstrakurikuler</h3>
-            <p>Pramuka, PMR, olahraga, seni, robotik, dan kegiatan kreatif lainnya.</p>
-        </div>
-        <div class="card">
-            <h3>Program Karakter & Disiplin</h3>
-            <p>Pendidikan karakter, mentoring, dan pembiasaan positif untuk membentuk generasi berakhlak.</p>
-        </div>
-    </div>
+
+<h2 class="section-title">Program Unggulan</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Program Akademik</h3>
+<p>Kurikulum terbaru dan teknologi pendidikan.</p>
+</div>
+
+<div class="card">
+<h3>Ekstrakurikuler</h3>
+<p>Pramuka, PMR, olahraga, seni, dan kegiatan kreatif.</p>
+</div>
+
+<div class="card">
+<h3>Karakter & Disiplin</h3>
+<p>Pembentukan karakter dan pembiasaan positif.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Galeri -->
+<section id="galeri">
+
+<h2 class="section-title">Galeri Kegiatan</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="foto1.jpg" style="width:100%;border-radius:10px;">
+<p>Kegiatan Gerak Jalan</p>
+</div>
+
+<div class="card">
+<img src="foto2.jpg" style="width:100%;border-radius:10px;">
+<p>Kegiatan Pramuka</p>
+</div>
+
+<div class="card">
+<img src="foto3.jpg" style="width:100%;border-radius:10px;">
+<p>Kegiatan Sekolah</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Berita -->
+<section id="berita">
+
+<h2 class="section-title">Berita Sekolah</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Kegiatan Gerak Jalan</h3>
+<p>Siswa mengikuti kegiatan gerak jalan memperingati hari kemerdekaan.</p>
+</div>
+
+<div class="card">
+<h3>Kegiatan Pramuka</h3>
+<p>Kegiatan pramuka untuk melatih kedisiplinan dan kerja sama.</p>
+</div>
+
+<div class="card">
+<h3>Program Literasi</h3>
+<p>Program membaca untuk meningkatkan minat baca siswa.</p>
+</div>
+
+</div>
+
 </section>
 
 <!-- Kontak -->
 <section id="kontak">
-    <h2 class="section-title">Kontak Sekolah</h2>
-    <p>Alamat: Jl. Trans Bitung-Likupang</p>
-    <p>Telepon/WA: 0000-0000-0000 | Email: smpn17satapbitung2@gmail.com</p>
-    <!-- Bisa tambah form kontak di sini jika mau -->
+
+<h2 class="section-title">Kontak Sekolah</h2>
+
+<p>Alamat : Jl. Trans Bitung-Likupang</p>
+<p>Email : smpn17satapbitung2@gmail.com</p>
+
 </section>
 
 <!-- Footer -->
 <footer>
-    <p>© 2026 SMP Negeri 17 Satu Atap Bitung | All Rights Reserved</p>
+
+<p>© 2026 SMP Negeri 17 Satu Atap Bitung</p>
+
 </footer>
 
 </body>
 </html>
-
-
